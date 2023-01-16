@@ -5,7 +5,7 @@
 
 # MIDI Surface Preset Creator for Cubase and Open Stage Control
 
-Python script to generate all the files to sync Cubase Midi Generator, Open Stage control and Cubase.
+Python script to generate required the files to sync Cubase Midi Generator, Open Stage control and Cubase.
 
 ### Languages and Tools
 
@@ -38,24 +38,31 @@ Run the script
 ```
 
 ADD CUBASE PRESETS
+
 Place Cubase Presets in you preset folder
+
 /Users/{userName}/Documents/Steinberg/Cubase/User Presets/Project Logical Editor/Track Selection/
 
 OPEN STAGE CONTROL INTEGRATION
 
 You'll need to create TWO new MIDI devices. Names MUST be 'OSC' and 'OSCDoublings'
+
 -Windows: Use loopMIDI https://www.tobias-erichsen.de/software/loopmidi.html
+
 -Mac: https://support.apple.com/en-ca/guide/audio-midi-setup/ams1013/mac
 
 -Install and Setup Open Stage Control http://openstagecontrol.ammd.net/
 
 Copy '/Doublings' and '/Sections' to:
+
 -Mac: /Users/<Username>/Documents/Steinberg/<Cubase or Nuendo>/MIDI Remote/Driver Scripts
+
 -Windows: C:\Users\<Username>\Documents\Steinberg&lt;Cubase or Nuendo>\MIDI Remote\Driver Scripts
 
 ADDING TRACK BUTTONS TO OSC
 
 -Panels are stored in '/Section Panels'
+
 -You can add them to your OSC surface via containers/fragments
 
 Enjoy!
