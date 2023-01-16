@@ -1,21 +1,18 @@
 from pathlib import Path
 import openpyxl
-import makeSelector
-import makeGrid
-import updateController
-import doublers.generator as generator
-import doublers.OSCGrid as OSCGrid
-import doublers.updateController as updateController
+import orchestral_sections.makeGrid as makeGrid
+import orchestral_sections.updateController as updateControllerSections
+import orchestral_sections.makeSelector as makeSelector
+import orchestral_doublers.makeSelector as makeSelectorDbl
+import orchestral_doublers.OSCGrid as OSCGrid
+import orchestral_doublers.updateController as updateController
 
 
-# ? Midi distribution:: 1 channel per instrument
-# ? C:\Users\fabio\Documents\Steinberg\Cubase\MIDI Remote\Driver Scripts\Local\ExampleCompany\simpledevice
-# ? M:\Z-Cubase Presets & Content\Y-Expression Maps\STR\Short
+# Retrieve excel info, and create working dict
+# All functions receive a dict of instruments(strings) to work with
 
-# TODO Retrieve excel info, and create working dict
-#! All functions receive list of instruments(strings) to work with
-wb = openpyxl.load_workbook('./template-tracks.xlsx')
-# sections_page = book['sections']
+
+wb = openpyxl.load_workbook('./template-tracks-user.xlsx')
 wss = wb.worksheets
 sections = dict()
 doublings = dict()
@@ -36,16 +33,18 @@ for i in range(1, len(wss)):
 makeSelector.makeSelectors(sections)
 
 # * Create and dump open stage control grid
-# makeGrid.make_grid(sections)
+makeGrid.make_grid(sections)
 
 # * Updating midi controller
-# updateController.update_controller(sections)
+updateControllerSections.updateController(sections)
 
 # *Generating cubase project logical editor xml's
-# generator.generator(doublings)
+makeSelectorDbl.generator(doublings)
 
 # *Create and dump open stage control grid
-# OSCGrid.make_grid(doublings)
+OSCGrid.make_grid(doublings)
 
 # *Update Midi controller
-# updateController.updateController(doublings)
+updateController.updateController(doublings)
+
+print('Success!')
