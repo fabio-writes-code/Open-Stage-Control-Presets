@@ -37,13 +37,13 @@ Run the script
   python instrument-generator.py
 ```
 
-ADD CUBASE PRESETS
+### Add Presets to Cubase
 
 Place Cubase Presets in you preset folder
 
 /Users/{userName}/Documents/Steinberg/Cubase/User Presets/Project Logical Editor/Track Selection/
 
-OPEN STAGE CONTROL INTEGRATION
+### Open Stage Control Integration
 
 You'll need to create TWO new MIDI devices. Names MUST be 'OSC' and 'OSCDoublings'
 
@@ -59,7 +59,7 @@ Copy '/Doublings' and '/Sections' to:
 
 -Windows: C:\Users\<Username>\Documents\Steinberg&lt;Cubase or Nuendo>\MIDI Remote\Driver Scripts
 
-ADDING TRACK BUTTONS TO OSC
+### Adding buttons to OSC
 
 -Panels are stored in '/Section Panels'
 
